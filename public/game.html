@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Nine Lives | a $JELLYCAT rescue game</title>
+<link rel="icon" href="data:image/png;base64,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" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --night: #171226;
+  --panel: #241c3a;
+  --line: #3c3060;
+  --amber: #ffb347;
+  --amber-dim: #b97f2e;
+  --pink: #ff8fb3;
+  --cream: #f5ead6;
+  --muted: #a99cc4;
+  --mint: #6ee7a0;
+  --jelly: #8ce04e;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--night);
+  color: var(--cream);
+  font-family: 'Nunito', sans-serif;
+  overflow: hidden;
+  height: 100dvh;
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.pix { font-family: 'Pixelify Sans', monospace; }
+
+#game-wrap {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0d0a18;
+}
+
+#game {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  image-rendering: pixelated;
+  cursor: pointer;
+}
+
+/* hud */
+
+#hud {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  pointer-events: none;
+  gap: 8px;
+}
+
+.hud-left, .hud-right { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.chip {
+  background: rgba(13,10,24,0.85);
+  border: 2px solid var(--line);
+  border-radius: 8px;
+  padding: 5px 12px;
+  font-family: 'Pixelify Sans', monospace;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.chip b { color: var(--amber); }
+.chip.jelly b { color: var(--jelly); }
+
+#zone-name {
+  position: fixed;
+  top: 52px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Pixelify Sans', monospace;
+  font-size: 22px;
+  color: var(--cream);
+  text-shadow: 2px 2px 0 #000;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+#zone-name.show { opacity: 1; }
+
+/* dialog box */
+
+#dialog {
+  position: fixed;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%) translateY(12px);
+  width: min(560px, calc(100% - 24px));
+  background: rgba(20,15,36,0.96);
+  border: 3px solid var(--amber);
+  border-radius: 12px;
+  padding: 14px 18px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  z-index: 10;
+}
+
+#dialog.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+#dialog .who {
+  font-family: 'Pixelify Sans', monospace;
+  font-size: 14px;
+  color: var(--pink);
+  margin-bottom: 3px;
+}
+
+#dialog .words { font-size: 15.5px; line-height: 1.45; }
+
+#dialog .hint {
+  margin-top: 8px;
+  font-size: 11.5px;
+  color: var(--muted);
+  text-align: right;
+}
+
+/* touch pad */
+
+#pad {
+  position: fixed;
+  right: 14px;
+  bottom: 14px;
+  display: none;
+  grid-template-columns: repeat(3, 52px);
+  grid-template-rows: repeat(3, 52px);
+  gap: 4px;
+  z-index: 5;
+  opacity: 0.85;
+}
+
+#pad button {
+  background: rgba(36,28,58,0.9);
+  border: 2px solid var(--line);
+  border-radius: 10px;
+  color: var(--cream);
+  font-size: 20px;
+  font-family: 'Pixelify Sans', monospace;
+  touch-action: none;
+}
+
+#pad button:active { background: var(--line); }
+#pad .blank { visibility: hidden; }
+
+body.touch #pad { display: grid; }
+
+/* intro and win overlays */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(13,10,24,0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+  padding: 20px;
+}
+
+.overlay.hidden { display: none; }
+
+.overlay-card {
+  max-width: 460px;
+  text-align: center;
+  background: var(--panel);
+  border: 3px solid var(--line);
+  border-radius: 16px;
+  padding: 34px 30px;
+}
+
+.overlay-card h1 {
+  font-family: 'Pixelify Sans', monospace;
+  font-size: clamp(30px, 7vw, 44px);
+  color: var(--jelly);
+  text-shadow: 3px 3px 0 #274415;
+  line-height: 1;
+}
+
+.overlay-card h1 span { color: var(--pink); text-shadow: 3px 3px 0 #4a1e33; }
+
+.overlay-card p {
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 15.5px;
+  line-height: 1.55;
+}
+
+.overlay-card p b { color: var(--cream); }
+
+.overlay-card .big-btn {
+  margin-top: 22px;
+  display: inline-block;
+  font-family: 'Pixelify Sans', monospace;
+  font-size: 18px;
+  color: #241505;
+  background: var(--amber);
+  border: none;
+  border-bottom: 4px solid var(--amber-dim);
+  border-radius: 10px;
+  padding: 12px 30px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.overlay-card .big-btn:active { transform: translateY(2px); }
+.overlay-card .big-btn.pink { background: var(--pink); border-bottom-color: #b05576; color: #33101e; }
+
+.overlay-card .controls-note {
+  margin-top: 18px;
+  font-size: 12.5px;
+  color: var(--muted);
+}
+
+.overlay-card .row { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+
+#btn-reset {
+  position: fixed;
+  bottom: 12px;
+  left: 12px;
+  font-family: 'Pixelify Sans', monospace;
+  font-size: 11px;
+  color: var(--muted);
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 3px 9px;
+  cursor: pointer;
+  z-index: 5;
+}
+
+#btn-reset:hover { color: var(--cream); border-color: var(--muted); }
+
+@media (prefers-reduced-motion: reduce) {
+  #dialog, #zone-name { transition: none; }
+}
+</style>
+</head>
+<body>
+
+<div id="game-wrap">
+  <canvas id="game" width="960" height="540"></canvas>
+</div>
+
+<div id="hud">
+  <div class="hud-left">
+    <div class="chip">Rescued: <b id="hud-rescued">0</b>/9</div>
+    <div class="chip jelly">Jellies: <b id="hud-jellies">0</b>/12</div>
+  </div>
+  <div class="hud-right">
+    <div class="chip">Carrying: <b id="hud-carry">nothing</b></div>
+  </div>
+</div>
+
+<div id="zone-name" class="pix"></div>
+
+<div id="dialog">
+  <div class="who" id="dlg-who"></div>
+  <div class="words" id="dlg-words"></div>
+  <div class="hint">tap to continue</div>
+</div>
+
+<div id="pad">
+  <button class="blank"></button>
+  <button data-dir="up" aria-label="Move up">&#9650;</button>
+  <button class="blank"></button>
+  <button data-dir="left" aria-label="Move left">&#9664;</button>
+  <button class="blank"></button>
+  <button data-dir="right" aria-label="Move right">&#9654;</button>
+  <button class="blank"></button>
+  <button data-dir="down" aria-label="Move down">&#9660;</button>
+  <button class="blank"></button>
+</div>
+
+<button id="btn-reset">reset save</button>
+
+<div class="overlay" id="intro">
+  <div class="overlay-card">
+    <h1>NINE <span>LIVES</span></h1>
+    <p>Nine strays are out there in the city tonight, and every one of them needs something.
+    You are the jelly. Find them. Help them. Bring them home.</p>
+    <button class="big-btn" id="btn-start">Start</button>
+    <p class="controls-note" id="controls-note">Move with WASD or arrow keys. Click a tile to walk there. Walk into cats and things to interact.</p>
+  </div>
+</div>
+
+<div class="overlay hidden" id="win">
+  <div class="overlay-card">
+    <h1>ALL <span>NINE</span> SAFE</h1>
+    <p>Every stray in the city has a warm box and a full bowl tonight, and it's your fault.
+    <b>The chain remembers. So do they.</b></p>
+    <div class="row">
+      <a class="big-btn pink" href="shelter.html">Visit the shelter</a>
+      <button class="big-btn" id="btn-again">Play again</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ---------- world data ---------- */
+
+var MAP_W = 30, MAP_H = 26;
+var TILE_W = 64, TILE_H = 32;
+
+// terrain: 0 pavement, 1 grass, 2 sand, 3 boardwalk, 4 water, 5 building
+var terrain = [];
+for (var y = 0; y < MAP_H; y++) {
+  terrain.push(new Array(MAP_W).fill(0));
+}
+
+function paintRect(x0, y0, x1, y1, t) {
+  for (var y = y0; y <= y1; y++)
+    for (var x = x0; x <= x1; x++)
+      if (x >= 0 && y >= 0 && x < MAP_W && y < MAP_H) terrain[y][x] = t;
+}
+
+// city blocks around the edges
+paintRect(0, 0, MAP_W - 1, 0, 5);
+paintRect(0, 0, 0, MAP_H - 1, 5);
+paintRect(0, MAP_H - 1, MAP_W - 1, MAP_H - 1, 5);
+paintRect(MAP_W - 1, 0, MAP_W - 1, MAP_H - 1, 5);
+
+// the park, north middle
+paintRect(10, 3, 19, 11, 1);
+
+// construction site, north west
+paintRect(2, 3, 8, 9, 2);
+
+// the pier, east edge: boardwalk then water
+paintRect(25, 3, 26, 12, 3);
+paintRect(27, 3, 29, 12, 4);
+
+// interior buildings shape the streets
+paintRect(11, 14, 17, 16, 5);   // mid block
+paintRect(21, 14, 23, 16, 5);   // bodega building
+paintRect(3, 12, 7, 15, 5);     // west block
+paintRect(12, 20, 16, 22, 5);   // south block
+paintRect(24, 20, 27, 22, 5);   // south east block
+
+var ZONES = [
+  { x0: 2,  y0: 17, x1: 9,  y1: 24, name: "The Alley" },
+  { x0: 18, y0: 17, x1: 27, y1: 24, name: "Bodega Corner" },
+  { x0: 10, y0: 3,  x1: 19, y1: 11, name: "The Park" },
+  { x0: 2,  y0: 3,  x1: 8,  y1: 9,  name: "The Site" },
+  { x0: 24, y0: 3,  x1: 29, y1: 12, name: "The Pier" }
+];
+
+// props: decorative and blocking
+var props = [
+  { kind: "dumpster", gx: 3,  gy: 18, block: true },
+  { kind: "box",      gx: 5,  gy: 19 },
+  { kind: "box",      gx: 4,  gy: 21 },
+  { kind: "lamp",     gx: 9,  gy: 17, block: true },
+  { kind: "lamp",     gx: 19, gy: 13, block: true },
+  { kind: "lamp",     gx: 10, gy: 24, block: true },
+  { kind: "hydrant",  gx: 18, gy: 18, block: true },
+  { kind: "crate",    gx: 20, gy: 18, block: true },
+  { kind: "crate",    gx: 20, gy: 19 },
+  { kind: "icebox",   gx: 24, gy: 17, block: true },
+  { kind: "tree",     gx: 11, gy: 4,  block: true },
+  { kind: "tree",     gx: 18, gy: 5,  block: true },
+  { kind: "tree",     gx: 12, gy: 10, block: true },
+  { kind: "tree",     gx: 17, gy: 9,  block: true },
+  { kind: "fountain", gx: 14, gy: 7,  block: true },
+  { kind: "fountain", gx: 15, gy: 7,  block: true },
+  { kind: "bench",    gx: 13, gy: 5 },
+  { kind: "cone",     gx: 3,  gy: 4 },
+  { kind: "cone",     gx: 6,  gy: 8 },
+  { kind: "beam",     gx: 4,  gy: 6,  block: true },
+  { kind: "pipe",     gx: 7,  gy: 4,  block: true },
+  { kind: "bollard",  gx: 25, gy: 12, block: true },
+  { kind: "box",      gx: 26, gy: 4 }
+];
+
+// quest items, placed away from the cats that need them
+var items = [
+  { id: "milk",     name: "a saucer of milk",   gx: 22, gy: 18 },
+  { id: "sandwich", name: "half a hero",        gx: 25, gy: 19 },
+  { id: "fish",     name: "a fresh fish",       gx: 24, gy: 18 },
+  { id: "yarn",     name: "a ball of yarn",     gx: 6,  gy: 22 },
+  { id: "sock",     name: "one warm sock",      gx: 5,  gy: 5 },
+  { id: "donut",    name: "a sprinkled donut",  gx: 14, gy: 4 },
+  { id: "blanket",  name: "a soft blanket",     gx: 4,  gy: 19 },
+  { id: "catnip",   name: "a sprig of catnip",  gx: 16, gy: 10 },
+  { id: "kitten",   name: "a tiny lost kitten", gx: 8,  gy: 4 }
+];
+
+// the nine strays
+var strays = [
+  { id: "mochi",   name: "Mochi",   coat: "gray",   gx: 6,  gy: 18, need: "milk",
+    ask: "so hungry... mama said wait here but that was two sunrises ago.",
+    thanks: "milk!! you are my favorite thing that ever happened." },
+  { id: "duchess", name: "Duchess", coat: "black",  gx: 13, gy: 8,  need: "pets", petsLeft: 2,
+    ask: "I was somebody's once. nobody has touched my ears in a very long time.",
+    again: "...you can do that one more time, if you insist.",
+    thanks: "hm. fine. I suppose I will come with you. do not tell the pigeons." },
+  { id: "rusty",   name: "Rusty",   coat: "orange", gx: 3,  gy: 8,  need: "sandwich",
+    ask: "the workers share their lunch on tuesdays. it has not been tuesday for a while.",
+    thanks: "a whole half a hero. this is the best day of my nine lives." },
+  { id: "captain", name: "Captain", coat: "gray",   gx: 26, gy: 11, need: "fish",
+    ask: "I watch the water every day. the fish know. they stay out there on purpose.",
+    thanks: "FISH. you magnificent land creature. I follow you now." },
+  { id: "yarnb",   name: "Yarnball",coat: "calico", gx: 18, gy: 4,  need: "yarn",
+    ask: "I had a yarn. a red one. I chased it and then the city happened to it.",
+    thanks: "MY YARN. or a yarn. all yarn is my yarn. let us go home." },
+  { id: "patch",   name: "Patch",   coat: "black",  gx: 19, gy: 20, need: "sock",
+    ask: "cold paws. that is the whole problem. that is the entire situation.",
+    thanks: "one sock is enough when you only trust one foot. I am in." },
+  { id: "glaze",   name: "Glaze",   coat: "pink",   gx: 22, gy: 13, need: "donut",
+    ask: "the bakery threw out a donut once, in the spring. I still think about it.",
+    thanks: "sprinkles. real sprinkles. cute. squishy. unbothered by volatility." },
+  { id: "mama",    name: "Mama",    coat: "calico", gx: 7,  gy: 23, need: "kitten",
+    ask: "my little one wandered toward the loud machines. please. I cannot climb the fence.",
+    thanks: "my baby. you found my baby. we will follow you anywhere, jelly." },
+  { id: "frost",   name: "Frost",   coat: "gray",   gx: 15, gy: 3,  need: "blanket",
+    ask: "the fountain mist gets in my fur at night. I do not shiver. I vibrate strategically.",
+    thanks: "warm. I remember warm. take me wherever this blanket lives." }
+];
+
+// collectible jellies
+var jellies = [
+  { gx: 2, gy: 24 }, { gx: 9, gy: 20 }, { gx: 10, gy: 13 }, { gx: 2, gy: 10 },
+  { gx: 8, gy: 10 }, { gx: 11, gy: 6 }, { gx: 19, gy: 8 }, { gx: 22, gy: 6 },
+  { gx: 26, gy: 8 }, { gx: 24, gy: 14 }, { gx: 18, gy: 23 }, { gx: 28, gy: 18 }
+];
+
+/* ---------- state ---------- */
+
+var player = { gx: 5, gy: 20, x: 5, y: 20, dir: 1, step: 0, path: [] };
+var inventory = [];
+var rescuedCount = 0;
+var jellyCount = 0;
+var hearts = [];
+var gameStarted = false;
+var gameWon = false;
+
+var blocked = {};
+function key(x, y) { return x + "," + y; }
+
+props.forEach(function (p) { if (p.block) blocked[key(p.gx, p.gy)] = true; });
+
+function walkable(x, y) {
+  if (x < 0 || y < 0 || x >= MAP_W || y >= MAP_H) return false;
+  var t = terrain[y][x];
+  if (t === 4 || t === 5) return false;
+  if (blocked[key(x, y)]) return false;
+  return true;
+}
+
+/* ---------- canvas ---------- */
+
+var canvas = document.getElementById("game");
+var ctx = canvas.getContext("2d");
+var W = 960, H = 540;
+var camX = 0, camY = 0;
+var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+function isoX(gx, gy) { return (gx - gy) * TILE_W / 2; }
+function isoY(gx, gy) { return (gx + gy) * TILE_H / 2; }
+
+function toScreen(gx, gy) {
+  return { x: isoX(gx, gy) - camX + W / 2, y: isoY(gx, gy) - camY + H / 2 };
+}
+
+/* ---------- tile drawing ---------- */
+
+var TILE_COLORS = {
+  0: ["#2b2144", "#251c3b"],
+  1: ["#2e4a2b", "#294226"],
+  2: ["#4a3d2b", "#423625"],
+  3: ["#4a3628", "#523c2c"]
+};
+
+function drawTile(gx, gy, t, time) {
+  var p = toScreen(gx, gy);
+  if (p.x < -TILE_W || p.x > W + TILE_W || p.y < -TILE_H * 2 || p.y > H + TILE_H * 2) return;
+
+  var fill;
+  if (t === 4) {
+    var phase = Math.floor(time * 1.5 + gx + gy) % 2;
+    fill = phase ? "#1e3a5c" : "#1a3350";
+  } else if (t === 5) {
+    fill = "#2b2144"; // pavement under the building prism
+  } else {
+    fill = TILE_COLORS[t][(gx + gy) % 2];
+  }
+
+  ctx.fillStyle = fill;
+  ctx.beginPath();
+  ctx.moveTo(p.x, p.y);
+  ctx.lineTo(p.x + TILE_W / 2, p.y + TILE_H / 2);
+  ctx.lineTo(p.x, p.y + TILE_H);
+  ctx.lineTo(p.x - TILE_W / 2, p.y + TILE_H / 2);
+  ctx.closePath();
+  ctx.fill();
+  ctx.strokeStyle = "rgba(13,10,24,0.55)";
+  ctx.lineWidth = 1;
+  ctx.stroke();
+
+  // boardwalk plank lines
+  if (t === 3) {
+    ctx.strokeStyle = "rgba(13,10,24,0.35)";
+    ctx.beginPath();
+    ctx.moveTo(p.x - TILE_W / 4, p.y + TILE_H / 4);
+    ctx.lineTo(p.x + TILE_W / 4, p.y + TILE_H * 3 / 4);
+    ctx.stroke();
+  }
+}
+
+function drawBuilding(gx, gy) {
+  var p = toScreen(gx, gy);
+  if (p.x < -TILE_W * 2 || p.x > W + TILE_W * 2 || p.y < -160 || p.y > H + 80) return;
+  var h = 46 + ((gx * 7 + gy * 13) % 3) * 14;
+
+  // left face
+  ctx.fillStyle = "#231a38";
+  ctx.beginPath();
+  ctx.moveTo(p.x - TILE_W / 2, p.y + TILE_H / 2);
+  ctx.lineTo(p.x, p.y + TILE_H);
+  ctx.lineTo(p.x, p.y + TILE_H - h);
+  ctx.lineTo(p.x - TILE_W / 2, p.y + TILE_H / 2 - h);
+  ctx.closePath();
+  ctx.fill();
+
+  // right face
+  ctx.fillStyle = "#1b1430";
+  ctx.beginPath();
+  ctx.moveTo(p.x + TILE_W / 2, p.y + TILE_H / 2);
+  ctx.lineTo(p.x, p.y + TILE_H);
+  ctx.lineTo(p.x, p.y + TILE_H - h);
+  ctx.lineTo(p.x + TILE_W / 2, p.y + TILE_H / 2 - h);
+  ctx.closePath();
+  ctx.fill();
+
+  // roof
+  ctx.fillStyle = "#332852";
+  ctx.beginPath();
+  ctx.moveTo(p.x, p.y - h);
+  ctx.lineTo(p.x + TILE_W / 2, p.y + TILE_H / 2 - h);
+  ctx.lineTo(p.x, p.y + TILE_H - h);
+  ctx.lineTo(p.x - TILE_W / 2, p.y + TILE_H / 2 - h);
+  ctx.closePath();
+  ctx.fill();
+
+  // a lit window here and there
+  if ((gx * 31 + gy * 17) % 4 === 0) {
+    ctx.fillStyle = "rgba(255,179,71,0.7)";
+    ctx.fillRect(p.x - 14, p.y + TILE_H / 2 - h + 14, 7, 9);
+  }
+  if ((gx * 13 + gy * 29) % 5 === 0) {
+    ctx.fillStyle = "rgba(255,179,71,0.45)";
+    ctx.fillRect(p.x + 8, p.y + TILE_H / 2 - h + 20, 7, 9);
+  }
+}
+</script>
+<script>
+/* ---------- sprites ---------- */
+
+var COATS = {
+  orange: { body: "#e8923a", belly: "#f7d9a8", stripe: "#b5651d" },
+  gray:   { body: "#8d8fa3", belly: "#d6d7e0", stripe: "#5f6175" },
+  black:  { body: "#3a3946", belly: "#5f5d6c", stripe: "#26252f" },
+  calico: { body: "#e8dcc8", belly: "#f7f0e2", stripe: "#c96f3b" },
+  pink:   { body: "#e089a8", belly: "#f5c9d8", stripe: "#b05576" },
+  jelly:  { body: "#7ccb45", belly: "#d8f5b8", stripe: "#4ea822" }
+};
+
+function px(x, y, w, h, color) {
+  ctx.fillStyle = color;
+  ctx.fillRect(Math.round(x), Math.round(y), w, h);
+}
+
+function drawCat(sx, sy, coat, dir, walking, step, time, isPlayer) {
+  var u = 3;
+  var c = COATS[coat];
+  var bob = walking ? Math.sin(step) * 1.6 : 0;
+
+  ctx.save();
+  ctx.translate(sx, sy + bob);
+  ctx.scale(dir, 1);
+
+  ctx.fillStyle = "rgba(0,0,0,0.35)";
+  ctx.beginPath();
+  ctx.ellipse(0, 4 - bob, 15, 5, 0, 0, Math.PI * 2);
+  ctx.fill();
+
+  px(-8 * u, -6 * u, 13 * u, 5 * u, c.body);
+  px(-6 * u, -3 * u, 9 * u, 2 * u, c.belly);
+
+  var l1 = walking ? Math.round(Math.sin(step) * 2) : 0;
+  var l2 = walking ? -l1 : 0;
+  px(-7 * u, -1 * u + l1, 2 * u, 3 * u, c.body);
+  px(-3 * u, -1 * u + l2, 2 * u, 3 * u, c.body);
+  px(1 * u, -1 * u + l2, 2 * u, 3 * u, c.body);
+  px(3.6 * u, -1 * u + l1, 2 * u, 3 * u, c.body);
+
+  px(-5 * u, -6 * u, u, 2 * u, c.stripe);
+  px(-2 * u, -6 * u, u, 2 * u, c.stripe);
+
+  var wag = reducedMotion ? 0 : Math.sin(time * 4 + sx * 0.05) * 3;
+  px(-10 * u, -8 * u + wag, 2 * u, 5 * u, c.body);
+  px(-10 * u, -9 * u + wag, 2 * u, 2 * u, c.stripe);
+
+  var hx = 4 * u, hy = -10 * u;
+  px(hx, hy, 6 * u, 5 * u, c.body);
+  px(hx + 1 * u, hy - 2 * u, 1.6 * u, 2 * u, c.body);
+  px(hx + 3.6 * u, hy - 2 * u, 1.6 * u, 2 * u, c.body);
+  px(hx + 1.3 * u, hy - 1.4 * u, u, 1.2 * u, "#f7b1c6");
+  px(hx + 3.9 * u, hy - 1.4 * u, u, 1.2 * u, "#f7b1c6");
+  px(hx + 1.4 * u, hy + 1.4 * u, u, u, "#1c1526");
+  px(hx + 3.8 * u, hy + 1.4 * u, u, u, "#1c1526");
+  px(hx + 2.6 * u, hy + 2.6 * u, u, 0.8 * u, "#e07a9a");
+
+  if (isPlayer) {
+    // little jelly crown wobble so you always know which cat is you
+    var jw = reducedMotion ? 0 : Math.sin(time * 3) * 1.5;
+    px(hx + 1.6 * u, hy - 4.4 * u + jw, 3 * u, 2 * u, "#8ce04e");
+    px(hx + 2.2 * u, hy - 5.4 * u + jw, 1.8 * u, u, "#b6f08a");
+  }
+
+  ctx.restore();
+}
+
+function drawProp(pr, time) {
+  var p = toScreen(pr.gx, pr.gy);
+  if (p.x < -80 || p.x > W + 80 || p.y < -120 || p.y > H + 60) return;
+  var x = p.x, y = p.y + TILE_H / 2;
+
+  if (pr.kind === "tree") {
+    px(x - 4, y - 26, 8, 26, "#5c3d28");
+    ctx.fillStyle = "#2f6b34";
+    ctx.beginPath(); ctx.arc(x, y - 40, 22, 0, Math.PI * 2); ctx.fill();
+    ctx.fillStyle = "#3d8544";
+    ctx.beginPath(); ctx.arc(x - 8, y - 48, 14, 0, Math.PI * 2); ctx.fill();
+  } else if (pr.kind === "lamp") {
+    px(x - 3, y - 64, 6, 64, "#3a3348");
+    px(x - 10, y - 72, 20, 10, "#3a3348");
+    px(x - 7, y - 69, 14, 6, "#ffd88f");
+    var g = ctx.createRadialGradient(x, y - 50, 4, x, y - 50, 70);
+    g.addColorStop(0, "rgba(255,179,71,0.22)");
+    g.addColorStop(1, "rgba(255,179,71,0)");
+    ctx.fillStyle = g;
+    ctx.fillRect(x - 70, y - 120, 140, 140);
+  } else if (pr.kind === "dumpster") {
+    px(x - 26, y - 30, 52, 28, "#2f5c48");
+    px(x - 26, y - 36, 52, 8, "#3d7a5f");
+  } else if (pr.kind === "box") {
+    px(x - 13, y - 16, 26, 15, "#a9743f");
+    px(x - 13, y - 16, 26, 4, "#c08a4e");
+  } else if (pr.kind === "crate") {
+    px(x - 13, y - 16, 26, 15, "#8a6b3a");
+    px(x - 13, y - 10, 26, 2, "#6b532d");
+    px(x - 2, y - 16, 3, 15, "#6b532d");
+  } else if (pr.kind === "icebox") {
+    px(x - 15, y - 22, 30, 21, "#4a7f9e");
+    px(x - 15, y - 26, 30, 6, "#67a9cc");
+    px(x - 10, y - 19, 20, 4, "#d9f2ff");
+  } else if (pr.kind === "hydrant") {
+    px(x - 5, y - 16, 10, 15, "#c14b4b");
+    px(x - 7, y - 10, 14, 4, "#c14b4b");
+    px(x - 3, y - 20, 6, 5, "#d96a6a");
+  } else if (pr.kind === "fountain") {
+    px(x - 22, y - 12, 44, 11, "#6b6e85");
+    px(x - 16, y - 16, 32, 6, "#8a8da6");
+    if (!reducedMotion) {
+      var spray = Math.sin(time * 6 + pr.gx) * 3;
+      px(x - 2, y - 30 - spray, 4, 16 + spray, "#9fd4e8");
+    }
+  } else if (pr.kind === "bench") {
+    px(x - 18, y - 12, 36, 5, "#7a5533");
+    px(x - 16, y - 7, 4, 6, "#5c3f26");
+    px(x + 12, y - 7, 4, 6, "#5c3f26");
+  } else if (pr.kind === "cone") {
+    px(x - 3, y - 14, 6, 12, "#e07b39");
+    px(x - 7, y - 4, 14, 3, "#e07b39");
+    px(x - 3, y - 10, 6, 3, "#f5ead6");
+  } else if (pr.kind === "beam") {
+    px(x - 26, y - 10, 52, 8, "#c9a15a");
+    px(x - 26, y - 10, 52, 2, "#8a6b3a");
+  } else if (pr.kind === "pipe") {
+    px(x - 20, y - 16, 40, 14, "#6b6e85");
+    ctx.fillStyle = "#171226";
+    ctx.beginPath(); ctx.ellipse(x + 20, y - 9, 5, 7, 0, 0, Math.PI * 2); ctx.fill();
+  } else if (pr.kind === "bollard") {
+    px(x - 4, y - 14, 8, 13, "#6b6e85");
+    px(x - 4, y - 16, 8, 4, "#8a8da6");
+  }
+}
+
+function drawItem(it, time) {
+  if (it.taken) return;
+  var p = toScreen(it.gx, it.gy);
+  if (p.x < -60 || p.x > W + 60 || p.y < -60 || p.y > H + 60) return;
+  var hover = reducedMotion ? 0 : Math.sin(time * 2.5 + it.gx * 3) * 2.5;
+  var x = p.x, y = p.y + TILE_H / 2 - 8 + hover;
+
+  if (it.id === "milk") {
+    px(x - 8, y - 4, 16, 6, "#cfd4de"); px(x - 6, y - 6, 12, 3, "#f5f7fa");
+  } else if (it.id === "fish") {
+    px(x - 10, y - 6, 16, 7, "#7aa9c9"); px(x + 6, y - 7, 5, 9, "#5d87a3");
+    px(x - 6, y - 4, 2, 2, "#1c1526");
+  } else if (it.id === "sandwich") {
+    px(x - 9, y - 8, 18, 3, "#d9a659"); px(x - 9, y - 5, 18, 3, "#7fae4e");
+    px(x - 9, y - 2, 18, 3, "#d9a659");
+  } else if (it.id === "yarn") {
+    ctx.fillStyle = "#d95d7e";
+    ctx.beginPath(); ctx.arc(x, y - 4, 8, 0, Math.PI * 2); ctx.fill();
+    ctx.strokeStyle = "#b0405e"; ctx.lineWidth = 1.5;
+    ctx.beginPath(); ctx.arc(x, y - 4, 5, 0.4, 2.6); ctx.stroke();
+  } else if (it.id === "sock") {
+    px(x - 4, y - 12, 8, 10, "#c9556b"); px(x - 10, y - 4, 12, 6, "#c9556b");
+    px(x - 4, y - 12, 8, 3, "#f5ead6");
+  } else if (it.id === "donut") {
+    ctx.fillStyle = "#d98f4e";
+    ctx.beginPath(); ctx.arc(x, y - 5, 9, 0, Math.PI * 2); ctx.fill();
+    ctx.fillStyle = "#e88bb0";
+    ctx.beginPath(); ctx.arc(x, y - 6, 7, 0, Math.PI * 2); ctx.fill();
+    ctx.fillStyle = "#171226";
+    ctx.beginPath(); ctx.arc(x, y - 5, 3, 0, Math.PI * 2); ctx.fill();
+    px(x - 4, y - 10, 2, 1, "#8ce04e"); px(x + 2, y - 8, 2, 1, "#f5ead6");
+  } else if (it.id === "blanket") {
+    px(x - 11, y - 8, 22, 10, "#9a6fc9"); px(x - 11, y - 8, 22, 3, "#b48fd9");
+  } else if (it.id === "catnip") {
+    px(x - 1, y - 12, 2, 10, "#3d8544");
+    px(x - 5, y - 10, 4, 3, "#5aa863"); px(x + 2, y - 8, 4, 3, "#5aa863");
+  } else if (it.id === "kitten") {
+    // a very small cat shape
+    px(x - 6, y - 6, 12, 6, "#d6d7e0");
+    px(x + 2, y - 10, 6, 5, "#d6d7e0");
+    px(x + 3, y - 12, 2, 2, "#d6d7e0"); px(x + 6, y - 12, 2, 2, "#d6d7e0");
+    px(x + 4, y - 8, 1, 1, "#1c1526"); px(x + 6, y - 8, 1, 1, "#1c1526");
+  }
+}
+
+function drawJelly(j, time) {
+  if (j.taken) return;
+  var p = toScreen(j.gx, j.gy);
+  if (p.x < -40 || p.x > W + 40 || p.y < -40 || p.y > H + 40) return;
+  var squish = reducedMotion ? 0 : Math.sin(time * 3 + j.gx * 5) * 1.5;
+  var x = p.x, y = p.y + TILE_H / 2 - 6;
+  ctx.fillStyle = "#8ce04e";
+  ctx.beginPath();
+  ctx.ellipse(x, y, 8 + squish, 7 - squish, 0, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.fillStyle = "#b6f08a";
+  ctx.beginPath();
+  ctx.ellipse(x - 2, y - 2, 3, 2, 0, 0, Math.PI * 2);
+  ctx.fill();
+}
+
+function drawStray(s, time) {
+  if (s.rescued) return;
+  var p = toScreen(s.gx, s.gy);
+  if (p.x < -80 || p.x > W + 80 || p.y < -80 || p.y > H + 80) return;
+  drawCat(p.x, p.y + TILE_H / 2 - 6, s.coat, s.gx % 2 ? 1 : -1, false, 0, time, false);
+
+  // a soft plea bubble when you are near
+  var d = Math.hypot(player.x - s.gx, player.y - s.gy);
+  if (d < 3.5) {
+    var bx = p.x, by = p.y - 34;
+    ctx.fillStyle = "rgba(245,234,214,0.95)";
+    ctx.beginPath();
+    ctx.ellipse(bx, by, 13, 10, 0, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.fillStyle = "#171226";
+    ctx.font = "13px 'Pixelify Sans', monospace";
+    ctx.textAlign = "center";
+    ctx.fillText(s.need === "pets" ? "..." : "?", bx, by + 4);
+  }
+}
+
+function drawHearts(dt) {
+  for (var i = hearts.length - 1; i >= 0; i--) {
+    var h = hearts[i];
+    h.wy -= 22 * dt;
+    h.life -= dt;
+    if (h.life <= 0) { hearts.splice(i, 1); continue; }
+    var p = toScreen(h.gx, h.gy);
+    ctx.globalAlpha = Math.min(1, h.life);
+    ctx.fillStyle = "#ff8fb3";
+    var s = 3, x = p.x + h.wx, y = p.y + h.wy;
+    ctx.fillRect(x - s, y - s, s, s);
+    ctx.fillRect(x + 1, y - s, s, s);
+    ctx.fillRect(x - s, y, s * 2 + 1, s);
+    ctx.fillRect(x - s + 1, y + s, s * 2 - 1, s - 1);
+    ctx.globalAlpha = 1;
+  }
+}
+
+function burstHearts(gx, gy, n) {
+  for (var i = 0; i < n; i++) {
+    hearts.push({
+      gx: gx, gy: gy,
+      wx: (Math.random() - 0.5) * 30,
+      wy: -10 - Math.random() * 14,
+      life: 0.8 + Math.random() * 0.7
+    });
+  }
+}
+
+/* ---------- main loop ---------- */
+
+var lastT = 0;
+
+function frame(ms) {
+  var time = ms / 1000;
+  var dt = Math.min(0.05, time - lastT);
+  lastT = time;
+
+  if (gameStarted && !gameWon) updatePlayer(dt);
+
+  // camera follows the player
+  var targetX = isoX(player.x, player.y);
+  var targetY = isoY(player.x, player.y);
+  var ease = reducedMotion ? 1 : Math.min(1, dt * 5);
+  camX += (targetX - camX) * ease;
+  camY += (targetY - camY) * ease;
+
+  // night sky backdrop
+  var sky = ctx.createLinearGradient(0, 0, 0, H);
+  sky.addColorStop(0, "#0d0a1c");
+  sky.addColorStop(1, "#1a1330");
+  ctx.fillStyle = sky;
+  ctx.fillRect(0, 0, W, H);
+
+  ctx.fillStyle = "#f5ead6";
+  for (var st = 0; st < 34; st++) {
+    var sx = (st * 149.3) % W;
+    var sy = (st * 83.7) % (H * 0.5);
+    ctx.globalAlpha = 0.15 + (st % 4) * 0.1;
+    ctx.fillRect(sx, sy, 2, 2);
+  }
+  ctx.globalAlpha = 1;
+
+  // ground pass
+  for (var gy = 0; gy < MAP_H; gy++)
+    for (var gx = 0; gx < MAP_W; gx++)
+      drawTile(gx, gy, terrain[gy][gx], time);
+
+  // depth-sorted pass: buildings, props, items, jellies, cats, player
+  var drawables = [];
+  for (gy = 0; gy < MAP_H; gy++)
+    for (gx = 0; gx < MAP_W; gx++)
+      if (terrain[gy][gx] === 5)
+        drawables.push({ d: gx + gy, f: drawBuilding.bind(null, gx, gy) });
+
+  props.forEach(function (pr) {
+    drawables.push({ d: pr.gx + pr.gy, f: drawProp.bind(null, pr, time) });
+  });
+  items.forEach(function (it) {
+    drawables.push({ d: it.gx + it.gy, f: drawItem.bind(null, it, time) });
+  });
+  jellies.forEach(function (j) {
+    drawables.push({ d: j.gx + j.gy, f: drawJelly.bind(null, j, time) });
+  });
+  strays.forEach(function (s) {
+    drawables.push({ d: s.gx + s.gy, f: drawStray.bind(null, s, time) });
+  });
+
+  var pp = toScreen(player.x, player.y);
+  drawables.push({
+    d: player.x + player.y,
+    f: function () {
+      drawCat(pp.x, pp.y + TILE_H / 2 - 6, "jelly", player.dir,
+              player.path.length > 0, player.step, time, true);
+    }
+  });
+
+  drawables.sort(function (a, b) { return a.d - b.d; });
+  drawables.forEach(function (d) { d.f(); });
+
+  drawHearts(dt);
+
+  requestAnimationFrame(frame);
+}
+requestAnimationFrame(frame);
+</script>
+<script>
+/* ---------- movement ---------- */
+
+function bfsPath(sx, sy, tx, ty) {
+  if (!walkable(tx, ty)) return null;
+  var start = key(sx, sy);
+  var goal = key(tx, ty);
+  if (start === goal) return [];
+  var prev = {};
+  prev[start] = null;
+  var q = [[sx, sy]];
+  var dirs = [[1, 0], [-1, 0], [0, 1], [0, -1]];
+
+  while (q.length) {
+    var cur = q.shift();
+    var ck = key(cur[0], cur[1]);
+    if (ck === goal) {
+      var path = [];
+      var k = goal;
+      while (prev[k]) {
+        var parts = k.split(",");
+        path.unshift([parseInt(parts[0], 10), parseInt(parts[1], 10)]);
+        k = prev[k];
+      }
+      return path;
+    }
+    for (var i = 0; i < 4; i++) {
+      var nx = cur[0] + dirs[i][0];
+      var ny = cur[1] + dirs[i][1];
+      var nk = key(nx, ny);
+      if (walkable(nx, ny) && !(nk in prev)) {
+        prev[nk] = ck;
+        q.push([nx, ny]);
+      }
+    }
+  }
+  return null;
+}
+
+var heldDir = null;
+
+function tryStep(dx, dy) {
+  var nx = player.gx + dx;
+  var ny = player.gy + dy;
+  if (dx > 0 || (dx === 0 && dy < 0)) player.dir = 1;
+  if (dx < 0 || (dx === 0 && dy > 0)) player.dir = -1;
+  if (walkable(nx, ny)) {
+    player.path = [[nx, ny]];
+  } else {
+    bumpInteract(nx, ny);
+  }
+}
+
+function updatePlayer(dt) {
+  if (player.path.length === 0) {
+    if (heldDir) tryStep(heldDir[0], heldDir[1]);
+    if (player.path.length === 0) return;
+  }
+  var next = player.path[0];
+  var dx = next[0] - player.x;
+  var dy = next[1] - player.y;
+  var dist = Math.hypot(dx, dy);
+  var speed = 4.2 * dt;
+
+  if (dx > 0.02) player.dir = 1;
+  else if (dx < -0.02) player.dir = -1;
+  else if (dy < -0.02) player.dir = 1;
+  else if (dy > 0.02) player.dir = -1;
+
+  if (dist <= speed) {
+    player.x = next[0];
+    player.y = next[1];
+    player.gx = next[0];
+    player.gy = next[1];
+    player.path.shift();
+    onArrive();
+  } else {
+    player.x += dx / dist * speed;
+    player.y += dy / dist * speed;
+    player.step += dt * 10;
+  }
+}
+
+/* ---------- interactions ---------- */
+
+var ITEM_BY_ID = {};
+items.forEach(function (it) { ITEM_BY_ID[it.id] = it; });
+
+function updateHud() {
+  document.getElementById("hud-rescued").textContent = rescuedCount;
+  document.getElementById("hud-jellies").textContent = jellyCount;
+  var carry = items.filter(function (it) { return it.taken && !it.delivered; })
+                   .map(function (it) { return it.name.replace(/^(a |an |one |half )/, ""); });
+  document.getElementById("hud-carry").textContent = carry.length ? carry.join(", ") : "nothing";
+}
+
+function onArrive() {
+  // pick up anything on this tile
+  items.forEach(function (it) {
+    if (!it.taken && it.gx === player.gx && it.gy === player.gy) {
+      it.taken = true;
+      burstHearts(it.gx, it.gy, 2);
+      say("You", "picked up " + it.name + ".");
+      updateHud();
+      save();
+    }
+  });
+  jellies.forEach(function (j) {
+    if (!j.taken && j.gx === player.gx && j.gy === player.gy) {
+      j.taken = true;
+      jellyCount++;
+      burstHearts(j.gx, j.gy, 2);
+      updateHud();
+      save();
+    }
+  });
+  announceZone();
+}
+
+function bumpInteract(nx, ny) {
+  for (var i = 0; i < strays.length; i++) {
+    var s = strays[i];
+    if (!s.rescued && s.gx === nx && s.gy === ny) {
+      meetStray(s);
+      return;
+    }
+  }
+}
+
+function meetStray(s) {
+  if (s.need === "pets") {
+    if (s.petsLeft > 1) {
+      s.petsLeft--;
+      burstHearts(s.gx, s.gy, 3);
+      say(s.name, s.ask);
+    } else if (s.petsLeft === 1) {
+      s.petsLeft--;
+      burstHearts(s.gx, s.gy, 4);
+      say(s.name, s.again, function () { rescue(s); });
+    }
+    return;
+  }
+
+  var it = ITEM_BY_ID[s.need];
+  if (it && it.taken && !it.delivered) {
+    it.delivered = true;
+    say(s.name, s.thanks, function () { rescue(s); });
+  } else {
+    say(s.name, s.ask);
+  }
+}
+
+function rescue(s) {
+  s.rescued = true;
+  rescuedCount++;
+  burstHearts(s.gx, s.gy, 8);
+  updateHud();
+  save();
+  if (rescuedCount >= strays.length) {
+    gameWon = true;
+    setTimeout(function () {
+      document.getElementById("win").classList.remove("hidden");
+    }, 900);
+  }
+}
+
+/* ---------- dialog ---------- */
+
+var dlg = document.getElementById("dialog");
+var dlgQueue = [];
+var dlgAfter = null;
+
+function say(who, words, after) {
+  dlgQueue.push({ who: who, words: words, after: after || null });
+  if (!dlg.classList.contains("show")) nextDialog();
+}
+
+function nextDialog() {
+  if (dlgAfter) { var fn = dlgAfter; dlgAfter = null; fn(); }
+  var d = dlgQueue.shift();
+  if (!d) { dlg.classList.remove("show"); return; }
+  document.getElementById("dlg-who").textContent = d.who;
+  document.getElementById("dlg-words").textContent = d.words;
+  dlgAfter = d.after;
+  dlg.classList.add("show");
+}
+
+dlg.addEventListener("click", nextDialog);
+
+/* ---------- zones ---------- */
+
+var lastZone = "";
+var zoneEl = document.getElementById("zone-name");
+var zoneTimer = null;
+
+function zoneAt(x, y) {
+  for (var i = 0; i < ZONES.length; i++) {
+    var z = ZONES[i];
+    if (x >= z.x0 && x <= z.x1 && y >= z.y0 && y <= z.y1) return z.name;
+  }
+  return "";
+}
+
+function announceZone() {
+  var z = zoneAt(player.gx, player.gy);
+  if (z && z !== lastZone) {
+    lastZone = z;
+    zoneEl.textContent = z;
+    zoneEl.classList.add("show");
+    clearTimeout(zoneTimer);
+    zoneTimer = setTimeout(function () { zoneEl.classList.remove("show"); }, 2200);
+  } else if (z) {
+    lastZone = z;
+  }
+}
+
+/* ---------- input ---------- */
+
+var KEYMAP = {
+  ArrowUp: [0, -1], ArrowDown: [0, 1], ArrowLeft: [-1, 0], ArrowRight: [1, 0],
+  w: [0, -1], s: [0, 1], a: [-1, 0], d: [1, 0],
+  W: [0, -1], S: [0, 1], A: [-1, 0], D: [1, 0]
+};
+
+document.addEventListener("keydown", function (e) {
+  if (!gameStarted || gameWon) return;
+  if (e.key === " " || e.key === "Enter") {
+    if (dlg.classList.contains("show")) { nextDialog(); e.preventDefault(); }
+    return;
+  }
+  var v = KEYMAP[e.key];
+  if (v) {
+    heldDir = v;
+    e.preventDefault();
+  }
+});
+
+document.addEventListener("keyup", function (e) {
+  var v = KEYMAP[e.key];
+  if (v && heldDir && v[0] === heldDir[0] && v[1] === heldDir[1]) heldDir = null;
+});
+
+canvas.addEventListener("click", function (e) {
+  if (!gameStarted || gameWon) return;
+  if (dlg.classList.contains("show")) { nextDialog(); return; }
+
+  // account for object-fit: contain letterboxing
+  var rect = canvas.getBoundingClientRect();
+  var scale = Math.min(rect.width / W, rect.height / H);
+  var offX = (rect.width - W * scale) / 2;
+  var offY = (rect.height - H * scale) / 2;
+  var mx = (e.clientX - rect.left - offX) / scale;
+  var my = (e.clientY - rect.top - offY) / scale;
+  if (mx < 0 || my < 0 || mx > W || my > H) return;
+
+  // screen to grid
+  var wx = mx - W / 2 + camX;
+  var wy = my - H / 2 + camY - TILE_H / 2;
+  var fgx = (wx / (TILE_W / 2) + wy / (TILE_H / 2)) / 2;
+  var fgy = (wy / (TILE_H / 2) - wx / (TILE_W / 2)) / 2;
+  var tx = Math.round(fgx);
+  var ty = Math.round(fgy);
+
+  // clicking a nearby stray walks up next to it and interacts
+  for (var i = 0; i < strays.length; i++) {
+    var s = strays[i];
+    if (!s.rescued && s.gx === tx && s.gy === ty) {
+      var best = null, bestLen = 1e9;
+      [[1,0],[-1,0],[0,1],[0,-1]].forEach(function (d) {
+        var p = bfsPath(player.gx, player.gy, tx + d[0], ty + d[1]);
+        if (p && p.length < bestLen) { bestLen = p.length; best = p; }
+      });
+      if (best) {
+        player.path = best;
+        var target = s;
+        pendingMeet = target;
+      } else {
+        meetStray(s);
+      }
+      return;
+    }
+  }
+
+  var path = bfsPath(player.gx, player.gy, tx, ty);
+  if (path) { player.path = path; pendingMeet = null; }
+});
+
+var pendingMeet = null;
+var origOnArrive = onArrive;
+onArrive = function () {
+  origOnArrive();
+  if (pendingMeet && player.path.length === 0) {
+    var s = pendingMeet;
+    pendingMeet = null;
+    var d = Math.abs(s.gx - player.gx) + Math.abs(s.gy - player.gy);
+    if (d === 1 && !s.rescued) meetStray(s);
+  }
+};
+
+// touch d-pad
+var isTouch = window.matchMedia("(pointer: coarse)").matches;
+if (isTouch) {
+  document.body.classList.add("touch");
+  document.getElementById("controls-note").textContent =
+    "Tap a tile to walk there, or use the pad. Walk into cats and things to interact.";
+}
+
+document.querySelectorAll("#pad button[data-dir]").forEach(function (b) {
+  var v = { up: [0, -1], down: [0, 1], left: [-1, 0], right: [1, 0] }[b.dataset.dir];
+  b.addEventListener("pointerdown", function (e) { heldDir = v; e.preventDefault(); });
+  b.addEventListener("pointerup", function () { heldDir = null; });
+  b.addEventListener("pointercancel", function () { heldDir = null; });
+});
+
+/* ---------- save / load ---------- */
+
+function save() {
+  try {
+    localStorage.setItem("jc_ninelives", JSON.stringify({
+      px: player.gx, py: player.gy,
+      jellies: jellies.map(function (j) { return j.taken ? 1 : 0; }),
+      items: items.map(function (it) { return { t: it.taken ? 1 : 0, d: it.delivered ? 1 : 0 }; }),
+      strays: strays.map(function (s) { return { r: s.rescued ? 1 : 0, p: s.petsLeft || 0 }; })
+    }));
+  } catch (e) {}
+}
+
+function load() {
+  try {
+    var raw = localStorage.getItem("jc_ninelives");
+    if (!raw) return;
+    var d = JSON.parse(raw);
+    if (walkable(d.px, d.py)) {
+      player.gx = d.px; player.gy = d.py;
+      player.x = d.px; player.y = d.py;
+    }
+    d.jellies.forEach(function (v, i) {
+      if (v && jellies[i]) { jellies[i].taken = true; jellyCount++; }
+    });
+    d.items.forEach(function (v, i) {
+      if (items[i]) { items[i].taken = !!v.t; items[i].delivered = !!v.d; }
+    });
+    d.strays.forEach(function (v, i) {
+      if (strays[i]) {
+        strays[i].rescued = !!v.r;
+        if (strays[i].need === "pets") strays[i].petsLeft = v.p;
+        if (v.r) rescuedCount++;
+      }
+    });
+  } catch (e) {}
+}
+
+document.getElementById("btn-reset").addEventListener("click", function () {
+  try { localStorage.removeItem("jc_ninelives"); } catch (e) {}
+  location.reload();
+});
+
+/* ---------- start ---------- */
+
+load();
+updateHud();
+camX = isoX(player.x, player.y);
+camY = isoY(player.x, player.y);
+
+document.getElementById("btn-start").addEventListener("click", function () {
+  document.getElementById("intro").classList.add("hidden");
+  gameStarted = true;
+  announceZone();
+  if (rescuedCount >= strays.length) {
+    gameWon = true;
+    document.getElementById("win").classList.remove("hidden");
+  }
+});
+
+document.getElementById("btn-again").addEventListener("click", function () {
+  try { localStorage.removeItem("jc_ninelives"); } catch (e) {}
+  location.reload();
+});
+</script>
+</body>
+</html>
+
+
+

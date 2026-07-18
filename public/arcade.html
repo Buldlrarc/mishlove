@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ARCADE | the $JELLYCAT games</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --night: #171226;
+  --panel: #241c3a;
+  --line: #3c3060;
+  --amber: #ffb347;
+  --amber-dim: #b97f2e;
+  --pink: #ff8fb3;
+  --cream: #f5ead6;
+  --muted: #a99cc4;
+  --mint: #6ee7a0;
+  --jelly: #8ce04e;
+  --gold: #ffd700;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: #0d0a18;
+  color: var(--cream);
+  font-family: 'Nunito', sans-serif;
+  min-height: 100dvh;
+  padding: 26px 14px 60px;
+}
+
+.pix { font-family: 'Pixelify Sans', monospace; }
+
+#page { max-width: 900px; margin: 0 auto; }
+
+h1 {
+  font-family: 'Pixelify Sans', monospace;
+  font-size: clamp(34px, 8vw, 54px);
+  text-align: center;
+  line-height: 1;
+  color: var(--cream);
+  text-shadow: 3px 3px 0 rgba(0,0,0,0.6);
+}
+
+h1 .j { color: var(--jelly); text-shadow: 3px 3px 0 #274415; }
+.tagline { text-align: center; color: var(--muted); margin-top: 8px; font-size: 14px; }
+
+.wallet {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.wallet .chip {
+  background: var(--night);
+  border: 2px solid var(--line);
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-family: 'Pixelify Sans', monospace;
+  font-size: 14px;
+}
+
+.wallet .chip b.jelly { color: var(--jelly); }
+.wallet .chip b.donut { color: var(--pink); }
+
+section { margin-top: 30px; }
+
+h2 {
+  font-family: 'Pixelify Sans', monospace;
+  font-size: 18px;
+  color: var(--amber);
+  margin-bottom: 12px;
+}
+
+.games { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width: 640px) { .games { grid-template-columns: 1fr; } }
+
+.game-card {
+  background: var(--panel);
+  border: 3px solid var(--line);
+  border-radius: 14px;
+  padding: 18px;
+}
+
+.game-card h3 {
+  font-family: 'Pixelify Sans', monospace;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.game-card h3 .l { color: var(--pink); }
+.game-card h3 .g { color: var(--gold); }
+.game-card .desc { color: var(--muted); font-size: 13px; margin-top: 6px; line-height: 1.4; }
+
+.game-stats { display: flex; gap: 14px; margin-top: 12px; flex-wrap: wrap; }
+.stat { font-family: 'Pixelify Sans', monospace; font-size: 12px; color: var(--muted); }
+.stat b { display: block; font-size: 22px; color: var(--cream); }
+
+.play-btn {
+  margin-top: 14px;
+  display: inline-block;
+  font-family: 'Pixelify Sans', monospace;
+  font-size: 15px;
+  color: #241505;
+  background: var(--amber);
+  border: none;
+  border-bottom: 4px solid var(--amber-dim);
+  border-radius: 10px;
+  padding: 10px 24px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.play-btn:active { transform: translateY(2px); }
+
+.boards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width: 640px) { .boards { grid-template-columns: 1fr; } }
+
+.board {
+  background: var(--night);
+  border: 2px solid var(--line);
+  border-radius: 10px;
+  padding: 12px 14px;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.board h3 { font-family: 'Pixelify Sans', monospace; font-size: 14px; color: var(--gold); margin-bottom: 8px; }
+.brow { display: flex; font-size: 13px; padding: 3px 0; }
+.brow .rank { width: 32px; color: var(--muted); }
+.brow .bh { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.brow .bf { color: var(--amber); margin-left: 8px; }
+.brow.me { color: var(--jelly); }
+.board-note { font-size: 12px; color: var(--muted); }
+
+.badges { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 10px; }
+
+.badge {
+  background: var(--night);
+  border: 2px solid var(--line);
+  border-radius: 10px;
+  padding: 10px 12px;
+  opacity: 0.45;
+}
+
+.badge.earned { opacity: 1; border-color: var(--jelly); }
+.badge.earned.rare { border-color: var(--gold); }
+.badge .b-icon { font-size: 20px; }
+.badge .b-name { font-family: 'Pixelify Sans', monospace; font-size: 13px; margin-top: 4px; }
+.badge.earned .b-name { color: var(--jelly); }
+.badge.earned.rare .b-name { color: var(--gold); }
+.badge .b-how { font-size: 11px; color: var(--muted); margin-top: 3px; line-height: 1.35; }
+
+#badge-count { color: var(--muted); font-family: 'Nunito', sans-serif; font-size: 13px; font-weight: 400; margin-left: 8px; }
+
+.tab-btn {
+  font-family: 'Pixelify Sans', monospace;
+  font-size: 12px;
+  color: var(--muted);
+  background: var(--night);
+  border: 2px solid var(--line);
+  border-radius: 7px;
+  padding: 4px 12px;
+  cursor: pointer;
+}
+
+.tab-btn.on { color: var(--jelly); border-color: var(--jelly); }
+
+#verify-box {
+  background: var(--night);
+  border: 2px solid var(--line);
+  border-radius: 10px;
+  padding: 14px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+#verify-box input, #verify-box select {
+  font-family: 'Pixelify Sans', monospace;
+  font-size: 13px;
+  background: var(--panel);
+  color: var(--cream);
+  border: 2px solid var(--line);
+  border-radius: 8px;
+  padding: 7px 10px;
+}
+
+#verify-box input { width: 130px; }
+#verify-result { font-family: 'Pixelify Sans', monospace; font-size: 13px; min-width: 120px; }
+#verify-result.ok { color: var(--jelly); }
+#verify-result.bad { color: #ff5468; }
+.verify-note { font-size: 12px; color: var(--muted); margin-top: 8px; line-height: 1.4; }
+
+.site-links { margin-top: 34px; text-align: center; font-size: 13px; }
+.site-links a { color: var(--muted); margin: 0 8px; }
+.site-links a:hover { color: var(--cream); }
+</style>
+</head>
+<body>
+<div id="page">
+
+<h1>THE <span class="j">JELLY</span> ARCADE</h1>
+<p class="tagline">two games, one cat, zero chill. progress and pockets, all in one place.</p>
+
+<div class="wallet">
+  <div class="chip">Jellies: <b class="jelly" id="w-jellies">0</b></div>
+  <div class="chip">Donuts: <b class="donut" id="w-donuts">0</b></div>
+  <div class="chip">Badges: <b id="w-badges">0</b></div>
+</div>
+
+<section>
+  <h2>The games</h2>
+  <div class="games">
+    <div class="game-card">
+      <h3>NINE <span class="l">LANES</span></h3>
+      <p class="desc">Hop the lanes, ride the bagels, mind the J train. Now with steam vents, rush hour, and hats.</p>
+      <div class="game-stats">
+        <div class="stat">best lane<b id="nl-best">0</b></div>
+        <div class="stat">runs<b id="nl-runs">0</b></div>
+        <div class="stat">golds<b id="nl-golds">0</b></div>
+        <div class="stat">close calls<b id="nl-close">0</b></div>
+      </div>
+      <a class="play-btn" href="hop.html">Hop</a>
+    </div>
+    <div class="game-card">
+      <h3><span class="g">EMPIRE</span></h3>
+      <p class="desc">102 floors between the street and the sky, and the climb doesn't stop there.</p>
+      <div class="game-stats">
+        <div class="stat">best floor<b id="em-best">0</b></div>
+        <div class="stat">runs<b id="em-runs">0</b></div>
+        <div class="stat">dodged<b id="em-dodged">0</b></div>
+        <div class="stat">summit<b id="em-summit">&mdash;</b></div>
+      </div>
+      <a class="play-btn" href="empire.html">Climb</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Leaderboards
+    <span id="board-tabs" style="margin-left:10px">
+      <button class="tab-btn on" id="tab-all">all time</button>
+      <button class="tab-btn" id="tab-week">this week</button>
+    </span>
+  </h2>
+  <div class="boards">
+    <div class="board">
+      <h3>NINE LANES &middot; lanes</h3>
+      <div id="board-lanes"><span class="board-note">reaching the city...</span></div>
+    </div>
+    <div class="board">
+      <h3>EMPIRE &middot; floors</h3>
+      <div id="board-empire"><span class="board-note">reaching the city...</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Badges<span id="badge-count"></span></h2>
+  <div class="badges" id="badge-grid"></div>
+</section>
+
+<section>
+  <h2>Verify a score card</h2>
+  <div id="verify-box">
+    <input id="vf-handle" maxlength="20" placeholder="handle">
+    <input id="vf-score" type="number" min="0" placeholder="score">
+    <input id="vf-code" maxlength="10" placeholder="verify code">
+    <button class="tab-btn" id="vf-check" style="padding:7px 16px">check</button>
+    <span id="verify-result"></span>
+  </div>
+  <p class="verify-note">every score card PNG carries a verify code in the bottom corner.
+  type the handle, the score, and the code from the card: if they don't match, the card is edited.
+  cards with no handle use <b>anon</b>.</p>
+</section>
+
+<div class="site-links">
+  <a href="/">$JELLYCAT</a><a href="shelter.html">the shelter</a><a href="game.html">nine lives</a><a href="hop.html">nine lanes</a><a href="empire.html">EMPIRE</a>
+</div>
+
+</div>
+<script>
+/* ---------- saves ---------- */
+
+function readSave(key) {
+  try {
+    var raw = localStorage.getItem(key);
+    return raw ? JSON.parse(raw) : {};
+  } catch (e) { return {}; }
+}
+
+var nl = readSave("jc_ninelanes");
+var em = readSave("jc_empire");
+var nlStats = nl.stats || {};
+var nlDeaths = nlStats.deaths || {};
+
+function put(id, v) { document.getElementById(id).textContent = v; }
+
+put("w-jellies", nl.jellies || 0);
+put("w-donuts", em.donuts || 0);
+put("nl-best", nl.best || 0);
+put("nl-runs", nlStats.runs || 0);
+put("nl-golds", nlStats.golds || 0);
+put("nl-close", nlStats.close || 0);
+put("em-best", em.best || 0);
+put("em-runs", em.runs || 0);
+put("em-dodged", em.dodged || 0);
+document.getElementById("em-summit").innerHTML = em.summited ? "&#9873;" : "&mdash;";
+
+/* ---------- badges ---------- */
+
+var BADGES = [
+  { id: "first-hop",  icon: "&#128007;", name: "First Hop",              how: "reach lane 1 in Nine Lanes",              rare: false, test: function () { return (nl.best || 0) >= 1; } },
+  { id: "lane-50",    icon: "&#127937;", name: "Fifty Deep",             how: "reach lane 50",                            rare: false, test: function () { return (nl.best || 0) >= 50; } },
+  { id: "lane-100",   icon: "&#127961;", name: "Crosstown Legend",       how: "reach lane 100",                           rare: true,  test: function () { return (nl.best || 0) >= 100; } },
+  { id: "cooked-5",   icon: "&#9832;",   name: "Well Done",              how: "get COOKED by steam five times",           rare: false, test: function () { return (nlDeaths.steamed || 0) >= 5; } },
+  { id: "pigeoned",   icon: "&#128038;", name: "Air Mail",               how: "get carried off by the pigeons",           rare: false, test: function () { return (nlDeaths.swept || 0) >= 1; } },
+  { id: "free-ride",  icon: "&#128666;", name: "Free Ride",              how: "ride a JELLY truck out of town",           rare: false, test: function () { return (nlDeaths.carried || 0) >= 1; } },
+  { id: "gold-10",    icon: "&#11088;",  name: "Gold Rush",              how: "collect 10 golden jellies",                rare: false, test: function () { return (nlStats.golds || 0) >= 10; } },
+  { id: "close-25",   icon: "&#128663;", name: "Nine Lives Exactly",     how: "survive 25 close calls",                   rare: false, test: function () { return (nlStats.close || 0) >= 25; } },
+  { id: "nl-regular", icon: "&#127849;", name: "Regular",                how: "finish 50 Nine Lanes runs",                rare: false, test: function () { return (nlStats.runs || 0) >= 50; } },
+  { id: "floor-50",   icon: "&#127959;", name: "Halfway Up",             how: "reach floor 50 in EMPIRE",                 rare: false, test: function () { return (em.best || 0) >= 50; } },
+  { id: "summit",     icon: "&#127937;", name: "Flag Planted",           how: "summit the Empire State Building",         rare: true,  test: function () { return !!em.summited; } },
+  { id: "pure",       icon: "&#129464;", name: "No Elevator, No Problem", how: "summit with no boosts",                   rare: true,  test: function () { return !!em.pureSummit; } },
+  { id: "sky-150",    icon: "&#9729;",   name: "Above the Clouds",       how: "reach floor 150",                          rare: false, test: function () { return (em.best || 0) >= 150; } },
+  { id: "orbit-250",  icon: "&#128752;", name: "Low Earth Orbit",        how: "reach floor 250",                          rare: true,  test: function () { return (em.best || 0) >= 250; } },
+  { id: "dodge-500",  icon: "&#128171;", name: "Untouchable",            how: "dodge 500 falling objects, lifetime",      rare: false, test: function () { return (em.dodged || 0) >= 500; } },
+  { id: "em-season",  icon: "&#127915;", name: "Season Ticket",          how: "finish 50 EMPIRE runs",                    rare: false, test: function () { return (em.runs || 0) >= 50; } },
+  { id: "two-town",   icon: "&#127922;", name: "Two-Game Town",          how: "play both arcade games",                   rare: false, test: function () { return (nlStats.runs || 0) >= 1 && (em.runs || 0) >= 1; } },
+  { id: "assets",     icon: "&#128176;", name: "Liquid Assets",          how: "hold 5000 total jellies + donuts",         rare: true,  test: function () { return ((nl.jellies || 0) + (em.donuts || 0)) >= 5000; } }
+];
+
+var grid = document.getElementById("badge-grid");
+var earnedCount = 0;
+
+grid.innerHTML = BADGES.map(function (b) {
+  var earned = false;
+  try { earned = b.test(); } catch (e) {}
+  if (earned) earnedCount++;
+  return '<div class="badge' + (earned ? " earned" : "") + (b.rare ? " rare" : "") + '">' +
+    '<div class="b-icon">' + b.icon + '</div>' +
+    '<div class="b-name">' + b.name + '</div>' +
+    '<div class="b-how">' + b.how + '</div>' +
+    '</div>';
+}).join("");
+
+put("w-badges", earnedCount + "/" + BADGES.length);
+document.getElementById("badge-count").textContent = " " + earnedCount + " of " + BADGES.length + " earned";
+
+/* ---------- leaderboards ---------- */
+
+var SUPA_URL = "https://xieqguffzzlnoghpjtqs.supabase.co";
+var SUPA_KEY = "sb_publishable_8yirRS9tAu94hJ9AvCaEvA_xagQxezy";
+
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, function (ch) {
+    return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch];
+  });
+}
+
+function myHandle() {
+  try { return localStorage.getItem("jc_handle") || ""; } catch (e) { return ""; }
+}
+
+var weekMode = false;
+
+function weekStartIso() {
+  var d = new Date();
+  var day = (d.getUTCDay() + 6) % 7;   // 0 = Monday
+  d.setUTCDate(d.getUTCDate() - day);
+  d.setUTCHours(0, 0, 0, 0);
+  return d.toISOString();
+}
+
+function loadBoard(table, cols, orderCol, elId) {
+  var el = document.getElementById(elId);
+  var url = SUPA_URL + "/rest/v1/" + table + "?select=" + cols + "&order=" + orderCol + ".desc&limit=120";
+  if (weekMode) url += "&created_at=gte." + weekStartIso();
+  fetch(url, {
+    headers: { "apikey": SUPA_KEY, "Authorization": "Bearer " + SUPA_KEY }
+  }).then(function (r) {
+    if (!r.ok) throw new Error("board " + r.status);
+    return r.json();
+  }).then(function (list) {
+    var seen = {}, rows = [];
+    list.forEach(function (s) {
+      if (!seen[s.handle]) { seen[s.handle] = true; rows.push(s); }
+    });
+    rows = rows.slice(0, 25);
+    if (!rows.length) {
+      el.innerHTML = '<span class="board-note">nobody yet. the board is yours to open.</span>';
+      return;
+    }
+    var mine = myHandle();
+    el.innerHTML = rows.map(function (s, i) {
+      var me = mine && s.handle === mine ? " me" : "";
+      return '<div class="brow' + me + '"><span class="rank">' + (i + 1) + '</span>' +
+        '<span class="bh">' + escapeHtml(s.handle) + '</span>' +
+        '<span class="bf">' + s[orderCol] + '</span></div>';
+    }).join("");
+  }).catch(function () {
+    el.innerHTML = '<span class="board-note">leaderboard coming online soon.</span>';
+  });
+}
+
+function loadBoards() {
+  loadBoard("ninelanes_scores", "handle,lanes", "lanes", "board-lanes");
+  loadBoard("empire_scores", "handle,floors", "floors", "board-empire");
+}
+
+function setWeekMode(on) {
+  weekMode = on;
+  document.getElementById("tab-all").className = "tab-btn" + (on ? "" : " on");
+  document.getElementById("tab-week").className = "tab-btn" + (on ? " on" : "");
+  loadBoards();
+}
+
+document.getElementById("tab-all").addEventListener("click", function () { setWeekMode(false); });
+document.getElementById("tab-week").addEventListener("click", function () { setWeekMode(true); });
+
+loadBoards();
+
+/* ---------- score card verification ---------- */
+
+function jcCore(s) {
+  var h = 7;
+  for (var i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) % 4294967296;
+  h = (h ^ (h >>> 16)) >>> 0;
+  h = (h * 33 + 251) % 4294967296;
+  h = (h ^ (h >>> 13)) >>> 0;
+  return h.toString(36);
+}
+
+document.getElementById("vf-check").addEventListener("click", function () {
+  var handle = (document.getElementById("vf-handle").value || "anon").trim();
+  var score = parseInt(document.getElementById("vf-score").value, 10);
+  var code = (document.getElementById("vf-code").value || "").trim().toLowerCase();
+  var out = document.getElementById("verify-result");
+  if (!code || isNaN(score)) {
+    out.className = "bad";
+    out.textContent = "fill all three";
+    return;
+  }
+  var expected = jcCore(handle + "|" + score + "|card|jcv1");
+  if (code === expected) {
+    out.className = "ok";
+    out.textContent = "✓ legit card";
+  } else {
+    out.className = "bad";
+    out.textContent = "✗ does not match";
+  }
+});
+</script>
+</body>
+</html>

@@ -17,9 +17,9 @@ const games = [
     status: "live",
   },
   {
-    title: "Hop",
-    tagline: "One button. Endless rooftops.",
-    href: "/hop",
+    title: "Nine Lives",
+    tagline: "Rescue the strays. No cat left behind.",
+    href: "/nine-lives",
     status: "live",
   },
   {
@@ -458,7 +458,22 @@ export default function Page() {
             })}
           </div>
 
-          <p className="mt-16 text-center text-xs tracking-[0.3em] text-white/30">
+          <div className="mt-14 flex justify-center gap-8">
+            <a
+              href="/arcade"
+              className="cabinet-badge text-xs tracking-[0.25em] text-[#a8ff4a] transition-colors hover:text-white"
+            >
+              THE ARCADE
+            </a>
+            <a
+              href="/shelter"
+              className="cabinet-badge text-xs tracking-[0.25em] text-[#a8ff4a] transition-colors hover:text-white"
+            >
+              THE SHELTER
+            </a>
+          </div>
+
+          <p className="mt-10 text-center text-xs tracking-[0.3em] text-white/30">
             A JELLYCAT COMMUNITY TAKEOVER
           </p>
         </div>
