@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'JELLYCAT Arcade',
   description: 'Play the Jellycat games. Scores hit the global leaderboard.',
   icons: {
-    icon: '/icon.svg',
+    icon: '/icon.png',
   },
 }
 
